@@ -1,0 +1,10 @@
+<aura:component 
+                implements="lightning:actionOverride,force:lightningQuickAction,lightning:hasPageReference,force:hasRecordId,lightning:isUrlAddressable"
+                access="global" controller="CreateOrderController">
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="OrderObj" type="Order"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <c:lwcCreateOrder recordId="V.recordId" oncloseModal="{!c.closeModal}"></c:lwcCreateOrder>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.onPageReferenceChange}"/>
+</aura:component>
